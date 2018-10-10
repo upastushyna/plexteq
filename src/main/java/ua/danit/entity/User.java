@@ -1,6 +1,7 @@
 package ua.danit.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+//import org.codehaus.jackson.annotate.JsonIgnore;
 import lombok.Data;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 

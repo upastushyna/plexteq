@@ -7,6 +7,7 @@ import ua.danit.repository.BackupRepository;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -34,13 +35,13 @@ public class BackupServiceImpl implements BackupService {
   @Override
   public File exportBackup(Long backupId) throws IOException {
     Backup backup = backupRepository.getOne(backupId);
-    File file = exportCSVWritter.mapToCSV(backup);
-    return file;
+    return exportCSVWritter.mapToCSV(backup);
   }
 
   @Override
   public List<Backup> findAllBackups() {
     return backupRepository.findAll();
+
   }
 
 }

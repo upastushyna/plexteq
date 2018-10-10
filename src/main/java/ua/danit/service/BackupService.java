@@ -12,5 +12,4 @@ public interface BackupService {
 
   List<Backup> findAllBackups();
 
- // File findBackupById(Long backupId) throws IOException;
 }

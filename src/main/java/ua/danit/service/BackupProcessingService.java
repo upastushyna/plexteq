@@ -15,7 +15,6 @@ import java.util.List;
 
 @Service
 public class BackupProcessingService {
-  private static final String CONNECTION_PATH = "http://localhost:9000/users" ;
   private BackupRepository backupRepository;
 
   @Autowired
@@ -28,7 +27,7 @@ public class BackupProcessingService {
     try {
 
       RestTemplate template = new RestTemplate();
-      ResponseEntity<List<User>> response = template.exchange(CONNECTION_PATH,
+      ResponseEntity<List<User>> response = template.exchange("http://localhost:9000/users",
           HttpMethod.GET,
           null,
           new ParameterizedTypeReference<List<User>>() {
