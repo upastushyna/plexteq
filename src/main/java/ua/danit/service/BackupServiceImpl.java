@@ -5,9 +5,7 @@ import org.springframework.stereotype.Service;
 import ua.danit.entity.Backup;
 import ua.danit.repository.BackupRepository;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -33,7 +31,7 @@ public class BackupServiceImpl implements BackupService {
   }
 
   @Override
-  public File exportBackup(Long backupId) throws IOException {
+  public List<String> exportBackup(Long backupId) throws IOException {
     Backup backup = backupRepository.getOne(backupId);
     return exportCSVWritter.mapToCSV(backup);
   }

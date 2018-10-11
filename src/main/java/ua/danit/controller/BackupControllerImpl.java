@@ -33,7 +33,7 @@ public class BackupControllerImpl {
   }
 
   @GetMapping("/export/{backupId}")
-  public ResponseEntity<File> exportBackup (@PathVariable("backupId") Long backupId) throws IOException {
+  public ResponseEntity<?> exportBackup (@PathVariable("backupId") Long backupId) throws IOException {
   return ResponseEntity.ok(backupService.exportBackup(backupId));
 }
 
